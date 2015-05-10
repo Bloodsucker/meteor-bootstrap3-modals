@@ -12,7 +12,7 @@ BModals.showNew = function(contentTemplateName, data, options) {
 		data: data
 	}, document.body);
 
-	var newBModal = new BModalInstance(newModalTemplate);
+	var newBModal = new BModal(newModalTemplate);
 
 	if (config.attached) {
 		newBModal.attached = true;
@@ -25,7 +25,7 @@ BModals.showNew = function(contentTemplateName, data, options) {
 	return newBModal;
 }
 
-function BModalInstance(modalView) {
+function BModal(modalView) {
 	var self = this;
 
 	self._v = modalView;
@@ -44,7 +44,7 @@ function BModalInstance(modalView) {
 	self._v._domrange.$('.modal').modal();
 }
 
-BModalInstance.prototype.on = function(eventName, cb) {
+BModal.prototype.on = function(eventName, cb) {
 	var self = this;
 
 	var bsEventName = eventName + '.bs.modal';
@@ -54,7 +54,7 @@ BModalInstance.prototype.on = function(eventName, cb) {
 	return self;
 }
 
-BModalInstance.prototype.destroy = function() {
+BModal.prototype.destroy = function() {
 	var self = this;
 
 	if(!self._visible) return;
