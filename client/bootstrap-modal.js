@@ -15,7 +15,9 @@ BModals.showNew = function(contentTemplateName, data, options) {
 	var newBModal = new BModalInstance(newModalTemplate);
 
 	if (config.attached) {
+		config.attached = true;
 		config.attached.view.onViewDestroyed(function () {
+			config.attached = false;
 			newBModal.destroy();
 		});
 	}
