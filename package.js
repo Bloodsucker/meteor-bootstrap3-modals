@@ -1,6 +1,6 @@
 Package.describe({
   name: 'bloodsucker:bootstrap3-modals',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'Modals, from bootstrap 3, properly integrated within Meteor platform.',
   git: 'https://github.com/Bloodsucker/meteor-bootstrap3-modals.git',
   documentation: 'README.md'
