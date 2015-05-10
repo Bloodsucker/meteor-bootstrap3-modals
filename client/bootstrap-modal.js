@@ -15,9 +15,9 @@ BModals.showNew = function(contentTemplateName, data, options) {
 	var newBModal = new BModalInstance(newModalTemplate);
 
 	if (config.attached) {
-		config.attached = true;
+		newBModal.attached = true;
 		config.attached.view.onViewDestroyed(function () {
-			config.attached = false;
+			newBModal.attached = false;
 			newBModal.destroy();
 		});
 	}
@@ -30,6 +30,7 @@ function BModalInstance(modalView) {
 
 	self._v = modalView;
 	self._visible = false;
+	self.attached = false;
 
 	self
 		.on('hidden', function() {
