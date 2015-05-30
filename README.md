@@ -10,6 +10,8 @@ meteor add bloodsucker:bootstrap3-modals
 
 After installation, you can use the package through global BModals.
 
+**Remember to have installed bootstrap 3**, which is the only requirement. However, this dependency will not be automatically downloaded or installed so you can choose your prefered bootstrap 3 package.
+
 ## Usage
 
 The proper way to create a modal in Meteor:
