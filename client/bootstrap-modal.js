@@ -1,7 +1,10 @@
 BModals = {};
 
 var defaultConfig = {
-	attached: null
+	attached: null,
+	classes: null,
+	size: null,
+	modalOptions: null
 };
 
 BModals.showNew = function(contentTemplateName, data, options) {
@@ -9,10 +12,11 @@ BModals.showNew = function(contentTemplateName, data, options) {
 
 	var newModalTemplate = Blaze.renderWithData(Template._bootstrapmodal, {
 		contentTemplateName: contentTemplateName,
+		config: config,
 		data: data
 	}, document.body);
 
-	var newBModal = new BModal(newModalTemplate);
+	var newBModal = new BModal(newModalTemplate, config.modalOptions);
 
 	if (config.attached) {
 		newBModal.attached = true;
@@ -25,7 +29,7 @@ BModals.showNew = function(contentTemplateName, data, options) {
 	return newBModal;
 }
 
-function BModal(modalView) {
+function BModal(modalView, modalOptions) {
 	var self = this;
 
 	self._v = modalView;
@@ -41,7 +45,7 @@ function BModal(modalView) {
 			self._visible = true;
 		});
 
-	self._v._domrange.$('.modal').modal();
+	self._v._domrange.$('.modal').modal(modalOptions);
 }
 
 BModal.prototype.on = function(eventName, cb) {
