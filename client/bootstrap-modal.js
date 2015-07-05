@@ -2,7 +2,7 @@ BModals = {};
 
 var defaultConfig = {
 	attached: null,
-	classes: null,
+	classes: 'fade',
 	size: null,
 	modalOptions: null
 };
