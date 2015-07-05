@@ -23,6 +23,24 @@ var bModal = BModals.showNew('modalContentTemplateName', function () {
 });
 ```
 
+The proper way to templating is extending [the expected html structure for bootstrap modals](http://getbootstrap.com/javascript/#modals-examples). So:
+
+```html
+<template name="modalContentTemplateName">
+	<div class="modal-header">
+		<button type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Modal title</h4>
+	</div>
+	<div class="modal-body">
+		<p>One fine body&hellip;</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	</div>
+</template>
+```
+
 The proper way to force to hide a modal in Meteor:
 ```javascript
 bModal.destroy();
