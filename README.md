@@ -44,7 +44,7 @@ Creates and shows a bootstrap modal and sets as a content the Template *modalCon
 
 #### Arguments
 
-* **modalContentTemplateName** String
+* **modalContentTemplateName** string
   
   The template name that will act as a content for the Modal.
   
@@ -57,6 +57,18 @@ Creates and shows a bootstrap modal and sets as a content the Template *modalCon
 * **attached** Template
   
   Optional. Links the modal to that *Template* (actually to the *Blaze.View* Template's instance) life-cycle. When the template is destroyed, then the modal will be also hide and then destroyed.
+
+* **classes** string
+
+  Optional. Specifies classes that will be appended in the *.modal* tag. By default, it appends the *fade* class.
+
+* **size** string
+  
+  Optional. Specifies classes that will be appended in the *.modal-dialog* tag. It can be used, and it is mean, to specify the modal size. In bootstrap modals there are [two default classes](http://getbootstrap.com/javascript/#modals-sizes) to set modal size: *modal-lg* and *modal-sm* class. By default, it does not append any.
+  
+* **modalOptions** Object
+  
+  Optional. Same [bootstrap modals options object](http://getbootstrap.com/javascript/#modals-options) that is passed during modal instantiation.
 
 After executing *BModals.showNew* it returns a *BModal* instance.
 
@@ -98,4 +110,4 @@ Copyright 2015 - [José Cabo Carsí] - [LinkedIn] - folcwine@gmail.com
 
 [LGPLv3]:http://www.gnu.org/copyleft/lesser.html
 [José Cabo Carsí]:https://github.com/Bloodsucker
-[LinkedIn]:https://es.linkedin.com/in/josecabo
+[LinkedIn]:https://linkedin.com/in/josecabo
